@@ -5,35 +5,35 @@ const DB_URI = `mongodb://localhost:${mongoPort}/test`;
 
 function connect() {
   return new Promise((resolve, reject) => {
-    if (process.env.NODE_ENV === "test") {
-      console.log("In test");
-      const Mockgoose = require("mockgoose").Mockgoose;
-      const mockgoose = new Mockgoose(mongoose);
+    // if (process.env.NODE_ENV === "test") {
+    //   console.log("In test");
+    //   const Mockgoose = require("mockgoose").Mockgoose;
+    //   const mockgoose = new Mockgoose(mongoose);
 
-      mockgoose.prepareStorage().then(() => {
-        mongoose
-          .connect(DB_URI, {
-            useNewUrlParser: true,
-            useFindAndModify: false,
-            useUnifiedTopology: true,
-          })
-          .then((res, err) => {
-            if (err) return reject(err);
-            resolve();
-          });
+    //   mockgoose.prepareStorage().then(() => {
+    //     mongoose
+    //       .connect(DB_URI, {
+    //         useNewUrlParser: true,
+    //         useFindAndModify: false,
+    //         useUnifiedTopology: true,
+    //       })
+    //       .then((res, err) => {
+    //         if (err) return reject(err);
+    //         resolve();
+    //       });
+    //   });
+    // } else {
+    mongoose
+      .connect(DB_URI, {
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+      })
+      .then((res, err) => {
+        if (err) return reject(err);
+        resolve();
       });
-    } else {
-      mongoose
-        .connect(DB_URI, {
-          useNewUrlParser: true,
-          useFindAndModify: false,
-          useUnifiedTopology: true,
-        })
-        .then((res, err) => {
-          if (err) return reject(err);
-          resolve();
-        });
-    }
+    // }
   });
 }
 
