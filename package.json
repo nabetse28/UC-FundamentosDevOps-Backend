@@ -13,7 +13,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon",
-    "test": "mocha --timeout 120000 --recursive --exit"
+    "dev": "export NODE_ENV=dev&& node server.js",
+    "test": "export NODE_ENV=test&& mocha --timeout 120000 --recursive --exit"
   }
 }
