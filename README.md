@@ -27,7 +27,6 @@ Runs the app in a development mode but the server connects to a localhost mongod
 You should have a docker-compose file with the following configuration:
 
 ```yaml:
-
 version: "3"
 services:
   api:
