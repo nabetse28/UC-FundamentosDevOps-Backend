@@ -37,6 +37,13 @@ jobs:
           npm test
         env:
           CI: true
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: Mocha Tests            # Name of the check run which will be created
+          path: reports/*.json    # Path to test results
+          reporter: mocha-json
   build:
     # The type of runner that the job will run on
     needs: [test]
