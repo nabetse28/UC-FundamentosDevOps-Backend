@@ -1,0 +1,24 @@
+In test | In dev mode
+{
+  _id: 60d10daf6f15860b0543a424,
+  name: 'TEST NAME',
+  age: 0,
+  background: 'BACKGROUND TEST',
+  description: 'DESCRIPTION TEST'
+}
+In test | In dev mode
+{
+  _id: 60d10daf6f15860b0543a425,
+  name: 'TEST NAME',
+  age: 0,
+  background: 'BACKGROUND TEST',
+  description: 'DESCRIPTION TEST'
+}
+AssertionError: expected 5 to equal 1
+    at /Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/get.js:47:36
+    at processTicksAndRejections (internal/process/task_queues.js:93:5) {
+  showDiff: true,
+  actual: 5,
+  expected: 1,
+  operator: 'strictEqual'
+}
