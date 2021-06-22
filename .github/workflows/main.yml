@@ -42,15 +42,30 @@ jobs:
         uses: actions/upload-artifact@v2 # upload test results
         with:
           name: test-results
-          path: ./mochawesome-report/mochawesome.json
-
-      - name: Create test report
-        uses: dorny/test-reporter@v1
+          path: ./mochawesome-report/*.*
+          
+      - name: Generate coverage badge
+        uses: tj-actions/coverage-badge-js@v1.3
         with:
-          # artifact: test-results            # artifact name
-          name: MOCHA TEST # Name of the check run which will be created
-          path: "./mochawesome-report/mochawesome.json" # Path to test results (inside artifact .zip)
-          reporter: "mocha-json"
+          path: test-app
+
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v6.1
+        id: verify-changed-files
+        with:
+          files: |
+             test-app/coverage/badge.svg
+
+      - name: Create Pull Request
+        if: steps.verify-changed-files.outputs.files_changed == 'true'
+        uses: peter-evans/create-pull-request@v3
+        with:
+          base: "main"
+          title: "Updated coverage badge"
+          branch: "chore/update-coverage-badge"
+          commit-message: "Updated coverage badge."
+          body: "Updated coverage badge."
+          token: ${{ github.token }}
 
   build:
     # The type of runner that the job will run on
