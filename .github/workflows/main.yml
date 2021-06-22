@@ -13,6 +13,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  REPO: nabetse28/uc-fundamentos-devops-backend
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -78,8 +81,8 @@ jobs:
             password: ${{ secrets.DOCKER_PASS }}
       - name: Build and push image
         env:
-          CONTAINER_IMAGE: ${{github.event.repository.name}}:${{github.sha}}
-          CONTAINER_IMAGE_LATEST: "${{ github.event.repository.name }}:latest"
+          CONTAINER_IMAGE: ${{env.REPO}}:${{github.sha}}
+          CONTAINER_IMAGE_LATEST: "${{ env.REPO }}:latest"
 
         run: |
           docker build -t  $CONTAINER_IMAGE -t $CONTAINER_IMAGE_LATEST .  
@@ -90,7 +93,7 @@ jobs:
         uses: anchore/scan-action@v2
         id: scan
         with:
-          image: ${{github.event.repository.name}}:${{github.sha}}
+          image: ${{env.REPO}}:${{github.sha}}
           acs-report-enable: true
           fail-build: true
       - name: upload Anchore scan SARIF report
