@@ -14,6 +14,6 @@
   "scripts": {
     "start": "node server.js",
     "dev": "export NODE_ENV=dev&& node server.js",
-    "test": "export NODE_ENV=test&& mocha --timeout 120000 --recursive --exit"
+    "test": "export NODE_ENV=test&& mocha --timeout 120000 --recursive --exit --reporter json > test-results.json"
   }
 }

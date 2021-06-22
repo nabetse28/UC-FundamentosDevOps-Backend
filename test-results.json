@@ -1,0 +1,151 @@
+{
+  _id: 60d14d813e1c971aa1690e0a,
+  name: 'TEST NAME',
+  age: 0,
+  background: 'BACKGROUND TEST',
+  description: 'DESCRIPTION TEST'
+}
+{
+  _id: 60d14d813e1c971aa1690e0b,
+  name: 'TEST NAME',
+  age: 0,
+  background: 'BACKGROUND TEST',
+  description: 'DESCRIPTION TEST'
+}
+{
+  _id: 60d14d813e1c971aa1690e0c,
+  name: 'TEST NAME',
+  age: 0,
+  background: 'BACKGROUND TEST',
+  description: 'DESCRIPTION TEST'
+}
+{ _id: 60d14d813e1c971aa1690e0d, name: 'TEST NAME' }
+{
+  errors: {
+    background: {
+      name: 'ValidatorError',
+      message: 'Path `background` is required.',
+      properties: [Object],
+      kind: 'required',
+      path: 'background'
+    },
+    age: {
+      name: 'ValidatorError',
+      message: 'Path `age` is required.',
+      properties: [Object],
+      kind: 'required',
+      path: 'age'
+    }
+  },
+  _message: 'Person validation failed',
+  name: 'ValidationError',
+  message: 'Person validation failed: background: Path `background` is required., age: Path `age` is required.'
+}
+{
+  "stats": {
+    "suites": 3,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-06-22T02:40:00.162Z",
+    "end": "2021-06-22T02:40:01.701Z",
+    "duration": 1539
+  },
+  "tests": [
+    {
+      "title": "OK, deleted 1 person",
+      "fullTitle": "DELETE /people OK, deleted 1 person",
+      "file": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/delete.js",
+      "duration": 82,
+      "currentRetry": 0,
+      "speed": "slow",
+      "err": {}
+    },
+    {
+      "title": "OK, getting people has no people",
+      "fullTitle": "GET /people OK, getting people has no people",
+      "file": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/get.js",
+      "duration": 7,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "OK, getting people has 1 person",
+      "fullTitle": "GET /people OK, getting people has 1 person",
+      "file": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/get.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "OK, creating a new person",
+      "fullTitle": "POST /people OK, creating a new person",
+      "file": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/post.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Fail, person requires other fields",
+      "fullTitle": "POST /people Fail, person requires other fields",
+      "file": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/post.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [],
+  "passes": [
+    {
+      "title": "OK, deleted 1 person",
+      "fullTitle": "DELETE /people OK, deleted 1 person",
+      "file": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/delete.js",
+      "duration": 82,
+      "currentRetry": 0,
+      "speed": "slow",
+      "err": {}
+    },
+    {
+      "title": "OK, getting people has no people",
+      "fullTitle": "GET /people OK, getting people has no people",
+      "file": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/get.js",
+      "duration": 7,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "OK, getting people has 1 person",
+      "fullTitle": "GET /people OK, getting people has 1 person",
+      "file": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/get.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "OK, creating a new person",
+      "fullTitle": "POST /people OK, creating a new person",
+      "file": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/post.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Fail, person requires other fields",
+      "fullTitle": "POST /people Fail, person requires other fields",
+      "file": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/post.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ]
+}

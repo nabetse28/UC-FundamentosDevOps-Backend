@@ -6,7 +6,7 @@ const DB_URI_LOCALHOST = `mongodb://localhost:${mongoPort}/test`;
 function connect() {
   return new Promise((resolve, reject) => {
     if (process.env.NODE_ENV === "test" || process.env.NODE_ENV === "dev") {
-      console.log("In test | In dev mode");
+      //   console.log("In test | In dev mode");
       //   const Mockgoose = require("mockgoose").Mockgoose;
       //   const mockgoose = new Mockgoose(mongoose);
 
