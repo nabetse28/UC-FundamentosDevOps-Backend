@@ -45,11 +45,11 @@ jobs:
           path: ./test-results.json
 
       - name: Create test report
-        uses: ./
-        if: success() || failure()
+        uses: dorny/test-reporter@v1
         with:
-          name: Mocha Tests
-          path: ./test-results.json
+          artifact: test-results            # artifact name
+          name: MOCHA TEST                  # Name of the check run which will be created
+          path: './test-results.json'                     # Path to test results (inside artifact .zip)
           reporter: mocha-json
 
   build:
