@@ -78,8 +78,8 @@ jobs:
             password: ${{ secrets.DOCKER_PASS }}
       - name: Build and push image
         env:
-          CONTAINER_IMAGE: ${{env.REPO}}:${{github.sha}}
-          CONTAINER_IMAGE_LATEST: "${{ env.REPO }}:latest"
+          CONTAINER_IMAGE: ${{github.event.repository.name}}:${{github.sha}}
+          CONTAINER_IMAGE_LATEST: "${{ github.event.repository.name }}:latest"
 
         run: |
           docker build -t  $CONTAINER_IMAGE -t $CONTAINER_IMAGE_LATEST .  
@@ -90,7 +90,7 @@ jobs:
         uses: anchore/scan-action@v2
         id: scan
         with:
-          image: ${{env.REPO}}:${{github.sha}}
+          image: ${{github.event.repository.name}}:${{github.sha}}
           acs-report-enable: true
           fail-build: true
       - name: upload Anchore scan SARIF report
