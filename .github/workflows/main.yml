@@ -47,7 +47,7 @@ jobs:
       - name: Create test report
         uses: dorny/test-reporter@v1
         with:
-          artifact: test-results            # artifact name
+          artifact: test-results.json            # artifact name
           name: MOCHA TEST                  # Name of the check run which will be created
           path: ./*.json                     # Path to test results (inside artifact .zip)
           reporter: mocha-json
