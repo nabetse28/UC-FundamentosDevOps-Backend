@@ -1,0 +1,330 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-06-22T05:49:03.360Z",
+    "end": "2021-06-22T05:49:04.733Z",
+    "duration": 1373,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "37507217-cfc1-4db1-94a6-4e997aebf794",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dbf69c48-c691-40f3-b929-a2e2dfead9bb",
+          "title": "DELETE /people",
+          "fullFile": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/delete.js",
+          "file": "/test/api/people/delete.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"DELETE /people\"",
+              "fullTitle": "DELETE /people \"before all\" hook in \"DELETE /people\"",
+              "timedOut": false,
+              "duration": 782,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "conn\n  .connect()\n  .then(() => done())\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "7720443d-817d-4621-af18-710438a65e4d",
+              "parentUUID": "dbf69c48-c691-40f3-b929-a2e2dfead9bb",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"DELETE /people\"",
+              "fullTitle": "DELETE /people \"after all\" hook in \"DELETE /people\"",
+              "timedOut": false,
+              "duration": 2,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "conn\n  .close()\n  .then(() => done())\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "e85bd486-2258-48dd-bf2b-43fa9e12702e",
+              "parentUUID": "dbf69c48-c691-40f3-b929-a2e2dfead9bb",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "OK, deleted 1 person",
+              "fullTitle": "DELETE /people OK, deleted 1 person",
+              "timedOut": false,
+              "duration": 81,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "request(app)\n  .post(\"/person\")\n  .send({\n    name: \"TEST NAME\",\n    age: 0,\n    background: \"BACKGROUND TEST\",\n    description: \"DESCRIPTION TEST\",\n  })\n  .then((res) => {\n    request(app)\n      .get(\"/\")\n      .then((res) => {\n        const body = res.body;\n        request(app)\n          .delete(\"/person/\" + body[0]._id)\n          .then((res) => {\n            const body = res.body;\n            expect(Object.keys(body).length).to.equal(0);\n            done();\n          })\n          .catch((err) => console.log(err));\n      });\n  })\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "f6baabd6-0b91-4ba8-a418-e15336b8b2e2",
+              "parentUUID": "dbf69c48-c691-40f3-b929-a2e2dfead9bb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f6baabd6-0b91-4ba8-a418-e15336b8b2e2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 81,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 120000
+        },
+        {
+          "uuid": "5be1cb8c-2cdf-4601-8749-b8db73c988eb",
+          "title": "GET /people",
+          "fullFile": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/get.js",
+          "file": "/test/api/people/get.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"GET /people\"",
+              "fullTitle": "GET /people \"before all\" hook in \"GET /people\"",
+              "timedOut": false,
+              "duration": 255,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "conn\n  .connect()\n  .then(() => done())\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "258cb50a-f252-4e74-aa01-2323d6f9553e",
+              "parentUUID": "5be1cb8c-2cdf-4601-8749-b8db73c988eb",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"GET /people\"",
+              "fullTitle": "GET /people \"after all\" hook in \"GET /people\"",
+              "timedOut": false,
+              "duration": 2,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "conn\n  .close()\n  .then(() => done())\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "856ad3c5-4043-47a0-b5cf-1dc308829c8b",
+              "parentUUID": "5be1cb8c-2cdf-4601-8749-b8db73c988eb",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "OK, getting people has no people",
+              "fullTitle": "GET /people OK, getting people has no people",
+              "timedOut": false,
+              "duration": 5,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "request(app)\n  .get(\"/\")\n  .then((res) => {\n    const body = res.body;\n    expect(body.length).to.equal(0);\n    done();\n  })\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "9da1ea25-2ef0-4b23-bfa2-3d58a6bce148",
+              "parentUUID": "5be1cb8c-2cdf-4601-8749-b8db73c988eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "OK, getting people has 1 person",
+              "fullTitle": "GET /people OK, getting people has 1 person",
+              "timedOut": false,
+              "duration": 8,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "request(app)\n  .post(\"/person\")\n  .send({\n    name: \"TEST NAME\",\n    age: 0,\n    background: \"BACKGROUND TEST\",\n    description: \"DESCRIPTION TEST\",\n  })\n  .then((res) => {\n    request(app)\n      .get(\"/\")\n      .then((res) => {\n        const body = res.body;\n        expect(body.length).to.equal(1);\n        done();\n      })\n      .catch((err) => console.log(err));\n  })\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "88513ea6-5e6f-4d12-8289-549e91a3b89c",
+              "parentUUID": "5be1cb8c-2cdf-4601-8749-b8db73c988eb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9da1ea25-2ef0-4b23-bfa2-3d58a6bce148",
+            "88513ea6-5e6f-4d12-8289-549e91a3b89c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 120000
+        },
+        {
+          "uuid": "be9b9f92-6386-4f28-b540-1e1c6a80dc58",
+          "title": "POST /people",
+          "fullFile": "/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/post.js",
+          "file": "/test/api/people/post.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"POST /people\"",
+              "fullTitle": "POST /people \"before all\" hook in \"POST /people\"",
+              "timedOut": false,
+              "duration": 217,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "conn\n  .connect()\n  .then(() => done())\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "4c4ea2a0-816e-4377-9ce4-2d9a877c0246",
+              "parentUUID": "be9b9f92-6386-4f28-b540-1e1c6a80dc58",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"POST /people\"",
+              "fullTitle": "POST /people \"after all\" hook in \"POST /people\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "conn\n  .close()\n  .then(() => done())\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "8d423e8f-f1e4-4f7f-ad52-e99a6e082aa1",
+              "parentUUID": "be9b9f92-6386-4f28-b540-1e1c6a80dc58",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "OK, creating a new person",
+              "fullTitle": "POST /people OK, creating a new person",
+              "timedOut": false,
+              "duration": 7,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "request(app)\n  .post(\"/person\")\n  .send({\n    name: \"TEST NAME\",\n    age: 0,\n    background: \"BACKGROUND TEST\",\n    description: \"DESCRIPTION TEST\",\n  })\n  .then((res) => {\n    const body = res.body;\n    expect(body).to.contain.property(\"_id\");\n    expect(body).to.contain.property(\"name\");\n    expect(body).to.contain.property(\"age\");\n    expect(body).to.contain.property(\"background\");\n    expect(body).to.contain.property(\"description\");\n    done();\n  })\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "63e9826c-a7c9-4141-b398-da6bea3c6ba9",
+              "parentUUID": "be9b9f92-6386-4f28-b540-1e1c6a80dc58",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fail, person requires other fields",
+              "fullTitle": "POST /people Fail, person requires other fields",
+              "timedOut": false,
+              "duration": 4,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "request(app)\n  .post(\"/person\")\n  .send({ name: \"TEST NAME\" })\n  .then((res) => {\n    const body = res.body;\n    console.log(body);\n    expect(body.errors.background.name).to.equal(\"ValidatorError\");\n    expect(body.errors.age.name).to.equal(\"ValidatorError\");\n    done();\n  })\n  .catch((err) => done(err));",
+              "err": {},
+              "uuid": "7c03b2e6-50bf-4be6-9327-c490583c239d",
+              "parentUUID": "be9b9f92-6386-4f28-b540-1e1c6a80dc58",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "63e9826c-a7c9-4141-b398-da6bea3c6ba9",
+            "7c03b2e6-50bf-4be6-9327-c490583c239d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 120000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 120000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
