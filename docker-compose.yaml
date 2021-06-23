@@ -1,0 +1,41 @@
+version: "3"
+services:
+  # This is if you are not going to use the image from Dockerhub
+  # api:
+  #   build:
+  #     dockerfile: Dockerfile
+  #     context: ./backend
+  #   ports:
+  #     - 5000:5000
+  #   volumes:
+  #     - /app/node_modules
+  #     - ./backend:/app
+  #   links:
+  #     - mongodb
+  api:
+    image: nabetse28/uc-fundamentos-devops-backend
+    ports:
+      - 5000:5000
+    links:
+      - mongodb
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    restart: always
+    volumes:
+      - data:/data/db
+
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: ../frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - api
+    links:
+      - api
+
+volumes:
+  data:
