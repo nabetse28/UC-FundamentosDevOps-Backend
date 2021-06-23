@@ -94,8 +94,9 @@ jobs:
         id: scan
         with:
           image: ${{env.REPO}}:${{github.sha}}
+          grype-version: 0.13.0
           acs-report-enable: true
-          fail-build: true
+          fail-build: false
           severity-cutoff: critical
       - name: upload Anchore scan SARIF report
         uses: github/codeql-action/upload-sarif@v1
