@@ -20,7 +20,7 @@ Launches the test runner in a recursive mode with mocha.\
 
 ### `npm run dev`
 
-Runs the app in a development mode but the server connects to a localhost mongodb database.\
+Runs the app in a development mode but the server connects to a localhost mongodb database.
 
 ## Dependencies
 
