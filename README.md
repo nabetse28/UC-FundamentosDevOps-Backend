@@ -1,4 +1,4 @@
-# UC-FundamentosDevOps-Backend
+# UC-FundamentosDevOps-Backend ![Node.js CI/CD](https://github.com/nabetse28/UC-FundamentosDevOps-Backend/actions/workflows/main.yml/badge.svg)
 
 Repository for a backend project in a DevOps fundamentals course.
 
