@@ -1,6 +1,6 @@
 # UC-FundamentosDevOps-Backend ![Node.js CI/CD](https://github.com/nabetse28/UC-FundamentosDevOps-Backend/actions/workflows/main.yml/badge.svg) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nabetse28_UC-FundamentosDevOps-Backend&metric=alert_status)](https://sonarcloud.io/dashboard?id=nabetse28_UC-FundamentosDevOps-Backend)
 
-Repository for a backend project in a DevOps fundamentals course.
+Repository for a backend project in a DevOps fundamentals course./
 
 ## Available Scripts
 
