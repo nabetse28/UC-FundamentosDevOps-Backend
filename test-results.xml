@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.1040" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-06-25T23:45:02" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="DELETE /people" timestamp="2021-06-25T23:45:02" tests="1" file="/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/delete.js" time="0.0700" failures="0">
+    <testcase name="DELETE /people OK, deleted 1 person" time="0.0700" classname="OK, deleted 1 person">
+    </testcase>
+  </testsuite>
+  <testsuite name="GET /people" timestamp="2021-06-25T23:45:02" tests="2" file="/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/get.js" time="0.0200" failures="0">
+    <testcase name="GET /people OK, getting people has no people" time="0.0080" classname="OK, getting people has no people">
+    </testcase>
+    <testcase name="GET /people OK, getting people has 1 person" time="0.0120" classname="OK, getting people has 1 person">
+    </testcase>
+  </testsuite>
+  <testsuite name="POST /people" timestamp="2021-06-25T23:45:02" tests="2" file="/Users/estebanherrera/Documents/UCreativa/Fundamentos de DevOps/Proyecto/backend/test/api/people/post.js" time="0.0140" failures="0">
+    <testcase name="POST /people OK, creating a new person" time="0.0100" classname="OK, creating a new person">
+    </testcase>
+    <testcase name="POST /people Fail, person requires other fields" time="0.0040" classname="Fail, person requires other fields">
+    </testcase>
+  </testsuite>
+</testsuites>
