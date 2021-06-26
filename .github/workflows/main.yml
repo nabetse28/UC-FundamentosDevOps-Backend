@@ -37,7 +37,7 @@ jobs:
       - name: npm install and test
         run: |
           npm install
-          npm test:nyc
+          npm run test:nyc
         env:
           CI: true
       - name: Upload test results
