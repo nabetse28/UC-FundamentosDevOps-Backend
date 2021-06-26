@@ -38,6 +38,7 @@ jobs:
         run: |
           npm install
           npm run test:nyc
+          npx prettier --write ./coverage/coverage-final.json
         env:
           CI: true
       - name: Upload test results
@@ -52,7 +53,7 @@ jobs:
       - name: Generate coverage badge
         uses: tj-actions/coverage-badge-js@v1.3
         with:
-          report_path: coverage/coverage-final.json
+          report_path: ./coverage/coverage-final.json
 
       - name: Commit the badge (if it changed)
         run: |
