@@ -5,16 +5,21 @@
     "cors": "2.8.4",
     "express": "4.16.3",
     "mocha": "^9.0.1",
+    "mocha-junit-reporter": "^2.0.0",
     "mochawesome": "^6.2.2",
     "mockgoose": "^8.0.4",
     "mongoose": "^5.12.13",
     "nodemon": "1.18.3",
+    "nyc": "^15.1.0",
     "supertest": "^6.1.3"
   },
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "export NODE_ENV=dev&& node server.js",
-    "test": "export NODE_ENV=test&& mocha --timeout 120000 --recursive --exit --reporter mochawesome || true"
+    "test": "export NODE_ENV=test&& mocha --timeout 120000 --recursive --exit --reporter html > report.html || true",
+    "test:awesome": "export NODE_ENV=test&& mocha --timeout 120000 --recursive --exit --reporter mochawesome || true",
+    "test:junit": "export NODE_ENV=test&& mocha --timeout 120000 --recursive --exit --reporter mocha-junit-reporter || true",
+    "test:nyc": "export NODE_ENV=test&& nyc --reporter=json mocha --timeout 120000 --recursive --exit --reporter mochawesome || true"
   }
 }
