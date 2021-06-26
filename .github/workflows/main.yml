@@ -52,7 +52,6 @@ jobs:
       - name: Generate coverage badge
         uses: tj-actions/coverage-badge-js@v1.3
         with:
-          path: ./test-results
           report_path: coverage/coverage-final.json
 
       - name: Commit the badge (if it changed)
