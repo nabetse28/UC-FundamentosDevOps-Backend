@@ -38,9 +38,10 @@ jobs:
         run: |
           npm install
           npm run test:nyc
-          npx prettier --write ./coverage/coverage-final.json
+          npx prettier --write ./coverage/coverage-summary.json
         env:
           CI: true
+
       - name: Upload test results
         if: success() || failure() # run this step even if previous step failed
         uses: actions/upload-artifact@v2 # upload test results
@@ -53,7 +54,7 @@ jobs:
       - name: Generate coverage badge
         uses: tj-actions/coverage-badge-js@v1.3
         with:
-          report_path: ./coverage/coverage-final.json
+          report_path: ./coverage/coverage-summary.json
 
       - name: Commit the badge (if it changed)
         run: |
