@@ -48,10 +48,12 @@ app.post("/person", async (req, res) => {
 });
 
 app.patch("/person/:id", async (req, res) => {
+  
   try {
     await Person.findByIdAndUpdate(req.params.id, req.body);
     await Person.save();
-    res.send(food);
+    let person = await Person.findById(req.params.id);
+    res.send(person);
   } catch (error) {
     res.status(500).send(error);
   }
