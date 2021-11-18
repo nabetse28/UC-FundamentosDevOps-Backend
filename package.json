@@ -21,6 +21,6 @@
     "test": "export NODE_ENV=test&& mocha --timeout 120000 --recursive --exit --reporter html > report.html || true",
     "test:awesome": "export NODE_ENV=test&& mocha --timeout 120000 --recursive --exit --reporter mochawesome || true",
     "test:junit": "export NODE_ENV=test&& mocha --timeout 120000 --recursive --exit --reporter mocha-junit-reporter || true",
-    "test:nyc": "export NODE_ENV=test&& nyc --reporter=json mocha --timeout 120000 --recursive --exit --reporter mochawesome || true"
+    "test:nyc": "export NODE_ENV=test&& nyc --reporter=json-summary mocha --timeout 120000 --recursive --exit || true"
   }
 }
